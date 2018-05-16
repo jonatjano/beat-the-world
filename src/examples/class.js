@@ -1,4 +1,7 @@
-export class Example {
+/**
+ * Examples about the working of classes
+ */
+class Example {
     /**
      * method used to create the object
      * let object = new Example("value")
@@ -34,5 +37,15 @@ export class Example {
      */
     static areEquals(a, b) {
         return a === b;
+    }
+}
+
+/**
+ * this class will react like Example but compare values for equals
+ * @extends Example
+ */
+class Example2 extends Example {
+    static areEquals(a, b) {
+        a.value === b.value;
     }
 }
