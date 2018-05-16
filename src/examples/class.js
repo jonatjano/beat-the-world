@@ -45,7 +45,14 @@ class Example {
  * @extends Example
  */
 class Example2 extends Example {
+    /**
+     * tell if a and b and their value are equals
+     * @param  {Example} a value to compare
+     * @param  {Example} b value to compare
+     * @return {boolean}   if a and b are equals
+     */
     static areEquals(a, b) {
-        a.value === b.value;
+        // super.areEquals() is the areEquals from Example since we extended the Example class
+        return super.areEquals(a, b) && a.value === b.value;
     }
 }
