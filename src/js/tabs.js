@@ -1,10 +1,9 @@
 window.onload = () => {
-    loadPage("shop")
     for(let tab of document.getElementsByClassName('tab')) {
         tab.onclick = () => {
             loadPage(tab.dataset.href);
         }
-        if (tab.dataset.defaultTab) { loadPage(tab.dataset.href); }
+        if (tab.dataset.defaultTab !== undefined) { loadPage(tab.dataset.href); }
     }
 }
 
