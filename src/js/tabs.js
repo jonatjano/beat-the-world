@@ -14,9 +14,12 @@ function loadPage(name)
     let url = "./htmlPage/" + name + "/" + name + ".html";
 
     httpRequest.addEventListener("readystatechange",function(e) {
-        if (httpRequest.readyState == 4 && httpRequest.status == 200)
-        {
-            document.getElementById("pageView").innerHTML = httpRequest.responseText;
+        if (httpRequest.readyState == 4) {
+            if (httpRequest.status == 200) {
+                document.getElementById("pageView").innerHTML = httpRequest.responseText;
+            } else {
+                loadPage("blank");
+            }
         }
     });
     httpRequest.open("GET", url, true);
