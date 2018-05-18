@@ -1,0 +1,3 @@
+// ignore go scripts used to serve app for local test
+serve.go
+serve_windows_64.exe
