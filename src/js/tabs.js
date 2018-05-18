@@ -1,22 +1,24 @@
 window.onload = () => {
+    loadPage("shop")
     for(let tab of document.getElementsByClassName('tab')) {
         tab.onclick = () => {
             loadPage(tab.dataset.href);
         }
+        if (tab.dataset.defaultTab) { loadPage(tab.dataset.href); }
     }
 }
 
 function loadPage(name)
 {
-    let ajaxRequest = new XMLHttpRequest();
+    let httpRequest = new XMLHttpRequest();
     let url = "./htmlPage/" + name + "/" + name + ".html";
 
-    ajaxRequest.addEventListener("readystatechange",function(e) {
-        if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200)
+    httpRequest.addEventListener("readystatechange",function(e) {
+        if (httpRequest.readyState == 4 && httpRequest.status == 200)
         {
-            document.getElementById("pageView").innerHTML = ajaxRequest.responseText;
+            document.getElementById("pageView").innerHTML = httpRequest.responseText;
         }
     });
-    ajaxRequest.open("GET", url, true);
-    ajaxRequest.send();
+    httpRequest.open("GET", url, true);
+    httpRequest.send();
 }
