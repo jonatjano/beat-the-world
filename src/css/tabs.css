@@ -5,16 +5,10 @@
     align-items: center;
 }
 
-.tab {
+#tabBar > a {
     flex: 1;
     max-width: 20%;
-    cursor: pointer;
-    text-align: center;
     border: 1px solid black;
     padding-top: 15px;
     padding-bottom: 15px;
-}
-
-.tab::selection, .tab::-moz-selection {
-    background-color: rgba(0, 0, 0, 0);
 }
