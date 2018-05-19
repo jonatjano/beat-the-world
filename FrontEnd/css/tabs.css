@@ -1,14 +1,36 @@
 #tabBar {
     display: flex;
-    flex-direction: row;
-    background-color: skyblue;
-    align-items: center;
+    flex-direction: column;
+    /*! background-color: lightcyan; */
+    align-items: left;
+    /*! left: 0; */
+    max-width: 15%;
+    /*! border-bottom-right-radius: 100%; */
 }
 
 #tabBar > a {
     flex: 1;
-    max-width: 20%;
     border: 1px solid black;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    border-bottom-right-radius: 50px 50%;
+    border-top-right-radius: 50px 50%;
+    background-color: #FFFFFFCC;
+}
+
+#tabBar > a:not(.img) {
+    padding: 30px;
+    width: calc(100% - 62px);
+}
+
+#tabBar > a.img {
+    padding: 0;
+    width: 100%;
+}
+
+#tabBar > a > img {
+    width: 100%;
+    border-bottom-right-radius: 50px 50%;
+    border-top-right-radius: 50px 50%;
+    position: relative;
+    top: 2px;
+    background-color: #FFFFFFCC;
 }

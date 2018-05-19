@@ -66,6 +66,6 @@ function loadBlankPage(elem) {
         }
 
     });
-    httpRequest.open("GET", "./pages/blank/blank.html", true);
+    httpRequest.open("GET", "./pages/blank/index.html", true);
     httpRequest.send();
 }

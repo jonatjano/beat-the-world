@@ -1,3 +1,9 @@
 // ignore go scripts used to serve app for local test
 serve.go
 serve_windows_64.exe
+
+// keep scripts locally
+*.sh
+
+// don't send backend binaries
+./BackEnd/bin/*

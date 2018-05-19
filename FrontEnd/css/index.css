@@ -1,0 +1,39 @@
+/* index.html */
+@import 'tabs.css';
+
+* {
+    font-family: Arial;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("https://cdn.discordapp.com/attachments/446390116483858441/447391704463441930/page_principal.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a::selection, a::-moz-selection {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#pageView {
+    position: absolute;
+    background-color: #FFFFFFCC;
+    width: 83vw;
+    height: calc(100% - 2vw);
+    top: 1vw;
+    right: 1vw;
+}
