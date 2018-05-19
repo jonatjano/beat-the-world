@@ -2,6 +2,21 @@ window.onload = () => {
     addEventsOnA();
 }
 
+// modify structure off <a> to use AJAX to do a one-page app
+// take the href to build the dataset of the balise
+//
+// process :
+//
+// <a href="play/index">play</a>
+//
+// to :
+//
+// <a   href="#"
+//      data-event-type="click"
+//      data-target-div="pageView"
+//      data-path="play/index"
+//      data-is-proccessed="true"
+// >play</a>
 function addEventsOnA() {
     for( let elem of document.getElementsByTagName('a') ) {
 
@@ -31,6 +46,9 @@ function addEventsOnA() {
     }
 };
 
+// event handler for <a>
+// use XMLHttpRequest to get the targeted html file
+// call loadBlankPage() on fail
 function loadPage()
 {
     let httpRequest = new XMLHttpRequest();
@@ -53,6 +71,8 @@ function loadPage()
     httpRequest.send();
 }
 
+// fill elem with ./pages/blank/index.html
+// called when loadPage() fail
 function loadBlankPage(elem) {
     let httpRequest = new XMLHttpRequest();
     httpRequest.addEventListener("readystatechange",function(e) {
