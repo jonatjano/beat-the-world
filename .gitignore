@@ -7,3 +7,5 @@ serve_windows_64.exe
 
 // don't send backend binaries
 ./BackEnd/bin/*
+
+./FrontEnd/js/magic.js

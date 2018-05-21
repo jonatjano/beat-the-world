@@ -10,11 +10,11 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 body {
-    background-image: url("https://cdn.discordapp.com/attachments/446390116483858441/447391704463441930/page_principal.png");
-    /* background-image: url("./assets/mainBackground.png"); */
+    background-image: url("../assets/mainBackground.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
