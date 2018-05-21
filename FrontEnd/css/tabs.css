@@ -1,11 +1,11 @@
 #tabBar {
     display: flex;
     flex-direction: column;
-    /*! background-color: lightcyan; */
     align-items: left;
-    /*! left: 0; */
     max-width: 15%;
-    /*! border-bottom-right-radius: 100%; */
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 100%;
 }
 
 #tabBar > a {
