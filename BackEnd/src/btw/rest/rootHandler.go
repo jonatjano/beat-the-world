@@ -1,8 +1,7 @@
 package rest
 
 import (
-	"btw/websocket"
-	// "encoding/json"
+	. "btw/websocket"
 	"fmt"
 	"log"
 	"net/http"
@@ -10,10 +9,13 @@ import (
 
 func Launch(port int) {
 	http.Handle("/", http.FileServer(http.Dir("../../FrontEnd")))
+	http.Handle("/BackEnd/champions/shop", http.HandlerFunc(championsShopHandler))
+	http.Handle("/BackEnd/champions/game", http.HandlerFunc(championsGameHandler))
+	http.Handle("/BackEnd/champions", http.HandlerFunc(championsHandler))
 	// http.Handle("/user", http.HandlerFunc(userHandler))
 
 	// websocket route
-	http.Handle("/websocket", http.HandlerFunc(websocket.WebSocketHandler))
+	http.Handle("/websocket", http.HandlerFunc(WebSocketHandler))
 
 	log.Println("Listening on port: ", port)
 
