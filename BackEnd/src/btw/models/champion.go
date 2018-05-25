@@ -10,19 +10,17 @@ import (
 
 type Champion struct {
 	// generic
-	Name      string `json:"name" groups:"shop,game"`
-	SplashUrl string `json:"splash" groups:"shop,game"`
+	Name string `json:"name" groups:"shop,game"`
 
 	// for shop
 	Title string   `json:"title" groups:"shop"`
 	Types []string `json:"types" groups:"shop"`
 
 	// for game
-	ModelUrl string `json:"modelUrl" groups:"game"`
-	MaxLife  int    `json:"maxLife" groups:"game"`
-	Life     int    `json:"life" groups:"game"`
-	MaxMana  int    `json:"maxMana" groups:"game"`
-	Mana     int    `json:"mana" groups:"game"`
+	MaxLife int `json:"maxLife" groups:"game"`
+	Life    int `json:"life" groups:"game"`
+	MaxMana int `json:"maxMana" groups:"game"`
+	Mana    int `json:"mana" groups:"game"`
 }
 
 func MarshalChampions(groups []string) ([]byte, error) {
@@ -49,19 +47,17 @@ func MarshalChampions(groups []string) ([]byte, error) {
 	return finalData, nil
 }
 
-func createChampion(name, splashUrl, modelUrl, title string, types []string, maxLife, maxMana int) Champion {
+func createChampion(name, title string, types []string, maxLife, maxMana int) Champion {
 	champ := &Champion{}
 
 	// ChampionBase
 	champ.Name = name
-	champ.SplashUrl = splashUrl
 
 	// ChampionShop
 	champ.Title = title
 	champ.Types = types
 
 	// ChampionGame
-	champ.ModelUrl = modelUrl
 	champ.Life = maxLife
 	champ.MaxLife = maxLife
 	champ.Mana = maxMana
@@ -73,7 +69,7 @@ func createChampion(name, splashUrl, modelUrl, title string, types []string, max
 var Champions = make([]Champion, 0)
 
 func init() {
-	Champions = append(Champions, createChampion("Hikaze", "assets/Cadre.png", "not Existing yet", "fire", []string{"ranged"}, 666, 42))
-	Champions = append(Champions, createChampion("tank", "assets/Cadre.png", "not Existing yet", "tank", []string{"cac", "minion master"}, 666, 42))
-	Champions = append(Champions, createChampion("arc", "assets/Cadre.png", "not Existing yet", "arc", []string{"ranged", "alone"}, 666, 42))
+	Champions = append(Champions, createChampion("Hikaze", "fire", []string{"ranged"}, 666, 42))
+	Champions = append(Champions, createChampion("tank", "tank", []string{"cac", "minion master"}, 666, 42))
+	Champions = append(Champions, createChampion("arc", "arc", []string{"ranged", "alone"}, 666, 42))
 }
