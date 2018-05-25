@@ -5,5 +5,4 @@ serve_windows_64.exe
 // keep scripts locally
 *.sh
 
-FrontEnd/js/magic.js
 BackEnd/bin/server

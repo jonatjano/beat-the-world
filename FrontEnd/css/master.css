@@ -37,4 +37,5 @@ a::selection, a::-moz-selection {
     height: calc(100% - 2vw);
     top: 1vw;
     right: 1vw;
+    overflow-y: auto;
 }

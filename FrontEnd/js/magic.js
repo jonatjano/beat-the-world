@@ -116,5 +116,6 @@ function appendScript(path) {
     script.type = 'text/javascript';
     script.charset = 'utf-8';
     script.src = path;
+    script.type = "module";
     document.head.append(script);
 }
