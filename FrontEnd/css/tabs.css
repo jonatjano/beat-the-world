@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: left;
-    max-width: 15%;
+    max-width: 15vw;
+    max-height: 5.4vw;
     overflow: hidden;
     overflow-y: auto;
     max-height: 100%;
