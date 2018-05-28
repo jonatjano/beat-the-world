@@ -1,6 +1,10 @@
 let button = document.getElementById("submitLogin");
 button.addEventListener("click", login)
 
+// function called when the script is ready
+// must be present otherwise is would call the scriptIsLoaded from others scripts
+window.scriptIsLoaded = () => {}
+
 function login() {
     // let pseudo = document.getElementById("pseudo").value;
     // let password = document.getElementById("password").value;
