@@ -16,7 +16,7 @@ function login() {
         let elem = document.createElement("a");
         elem.dataset.eventType = "click";
         elem.dataset.targetDiv = "body";
-        elem.dataset.path = "home/index";
+        elem.dataset.path = "home/home";
         elem.dataset.isProccessed = true;
         elem.addEventListener(elem.dataset.eventType, loadPage)
         elem.dispatchEvent( new Event(elem.dataset.eventType) );
