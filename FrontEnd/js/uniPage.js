@@ -111,11 +111,24 @@ function isLoggedIn() {
     }
 }
 
+function cleanScripts() {
+    for (let script of document.getElementsByTagName('script')) {
+        if (script.dataset.isDynamic && script.dataset.isDynamic === 'true') {
+            script.parentNode.removeChild(script);
+        }
+    }
+}
+
 function appendScript(path) {
     let script = document.createElement('script');
     script.type = 'text/javascript';
     script.charset = 'utf-8';
     script.src = path;
     script.type = "module";
-    document.head.append(script);
+    script.dataset.isDynamic = 'true';
+    document.head.appendChild(script);
+
+    script.onload = function() {
+        window.scriptIsLoaded();
+    };
 }
