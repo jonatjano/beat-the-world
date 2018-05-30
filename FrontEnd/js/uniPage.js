@@ -23,7 +23,6 @@ window.onload = () => {
 // >play</a>
 function addEventsOnA() {
     for( let elem of document.getElementsByTagName('a') ) {
-
         if (elem.dataset.isProccessed) {
             continue;
         }
@@ -40,7 +39,10 @@ function addEventsOnA() {
         }
 
         elem.dataset.path = href.replace(/https?:\/\/[a-zA-Z]+(:[0-9]+)?\/(#\/)?/, '');
-
+        let hrefcomponents = elem.dataset.path.split("/");
+        if (hrefcomponents.length !== 1 && hrefcomponents[0] !== hrefcomponents[1]) {
+            elem.dataset.path = hrefcomponents[0] + "/components/" + hrefcomponents[1] + "/" + hrefcomponents[1];
+        }
         elem.dataset.isProccessed = true;
 
         elem.addEventListener(elem.dataset.eventType, loadPage)
@@ -55,7 +57,7 @@ function addEventsOnA() {
 // call loadBlankPage() on fail
 function loadPage()
 {
-    console.log(this);
+console.log(this.dataset.path);
     pageIsLogin = false;
     let httpRequest = new XMLHttpRequest();
     let url = "./pages/" + this.dataset.path + ".html";
@@ -93,7 +95,7 @@ function loadBlankPage(elem) {
         }
 
     });
-    httpRequest.open("GET", "./pages/blank/index.html", true);
+    httpRequest.open("GET", "./pages/blank/blank.html", true);
     httpRequest.send();
 }
 
@@ -104,7 +106,7 @@ function isLoggedIn() {
         let elem = document.createElement("a");
         elem.dataset.eventType = "click";
         elem.dataset.targetDiv = "body";
-        elem.dataset.path = "login/index";
+        elem.dataset.path = "login/login";
         elem.dataset.isProccessed = true;
         elem.addEventListener(elem.dataset.eventType, loadPage)
         elem.dispatchEvent( new Event(elem.dataset.eventType) );
