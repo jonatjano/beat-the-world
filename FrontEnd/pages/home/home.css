@@ -1,15 +1,13 @@
 #tabBar {
     display: flex;
-    flex-direction: column;
-    align-items: left;
+    flex-flow: column;
     max-width: 15vw;
-    max-height: 5.4vw;
-    overflow: hidden;
-    overflow-y: auto;
-    max-height: 100%;
+    height: calc(100% - 2vw);
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 
-#tabBar > a {
+#tabBar a {
     flex: 1;
     border: 1px solid black;
     border-bottom-right-radius: 50px 50%;
@@ -17,17 +15,20 @@
     background-color: #FFFFFFCC;
 }
 
-#tabBar > a:not(.img) {
-    padding: 30px;
-    width: calc(100% - 62px);
+#tabBar a:not(.img) {
+    display: inline-flex;
 }
 
-#tabBar > a.img {
+span {
+    margin: auto;
+}
+
+#tabBar a.img {
     padding: 0;
     width: 100%;
 }
 
-#tabBar > a > img {
+a.img img {
     width: 100%;
     border-bottom-right-radius: 50px 50%;
     border-top-right-radius: 50px 50%;
