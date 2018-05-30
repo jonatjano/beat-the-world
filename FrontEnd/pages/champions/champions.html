@@ -1,0 +1,15 @@
+<style scoped>@import url("./pages/champions/champions.css");</style>
+<h1>champions</h1>
+<div id="championList">
+    <div id=pattern>
+        <img class="champion" src="assets/champions/:NAME:/framed.png">
+        <img class="frame" src="assets/frames/:FRAME:.png">
+    </div>
+</div>
+<div id="champPreview">
+    <img class="background" data-source-pattern="assets/champion/:NAME:/splash.png">
+</div>
+<img
+    src="./assets/mainBackground.png" style="display: none;"
+    onload="appendScript('./pages/champions/champions.js');"
+/>

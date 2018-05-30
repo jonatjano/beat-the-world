@@ -1,0 +1,38 @@
+#tabBar {
+    display: flex;
+    flex-flow: column;
+    max-width: 15vw;
+    height: calc(100% - 2vw);
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+#tabBar a {
+    flex: 1;
+    border: 1px solid black;
+    border-bottom-right-radius: 50px 50%;
+    border-top-right-radius: 50px 50%;
+    background-color: #FFFFFFCC;
+}
+
+#tabBar a:not(.img) {
+    display: inline-flex;
+}
+
+span {
+    margin: auto;
+}
+
+#tabBar a.img {
+    padding: 0;
+    width: 100%;
+}
+
+a.img img {
+    width: 100%;
+    border-bottom-right-radius: 50px 50%;
+    border-top-right-radius: 50px 50%;
+    position: relative;
+    top: 2px;
+    background-color: #FFFFFFCC;
+}
